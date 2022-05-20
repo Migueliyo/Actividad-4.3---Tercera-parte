@@ -2,7 +2,7 @@ package vista.reservas;
 
 import javax.swing.*;
 
-public class Reserva {
+public class Reserva implements GetterReserva {
     private JFrame ventanaReservas;
     private JPanel panelPrincipal;
     private JLabel labelPrueba;
@@ -37,42 +37,52 @@ public class Reserva {
         ventanaReservas.setVisible(true);
     }
 
+    @Override
     public JButton getBotonCerrarSesion() {
         return botonCerrarSesion;
     }
 
+    @Override
     public JFrame getVentanaReservas() {
         return ventanaReservas;
     }
 
+    @Override
     public JLabel getLabelPrueba() {
         return labelPrueba;
     }
 
+    @Override
     public JButton getBorrar() {
         return borrar;
     }
 
+    @Override
     public JButton getBotonSalir() {
         return botonSalir;
     }
 
+    @Override
     public JLabel getTextoUsuario() {
         return textoUsuario;
     }
 
+    @Override
     public JTextField getTextoFecha() {
         return textoFecha;
     }
 
+    @Override
     public JTextField getTextoDuracion() {
         return textoDuracion;
     }
 
+    @Override
     public JTextField getTextoHoraEntrada() {
         return textoHoraEntrada;
     }
 
+    @Override
     public JTextField getTextoTipoReserva() {
         return textoTipoReserva;
     }

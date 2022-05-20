@@ -2,7 +2,7 @@ package vista.logueo;
 
 import javax.swing.*;
 
-public class Login {
+public class Login implements GetterLogin {
     private JFrame ventanaLogin;
     private JPanel panelPrincipal;
     private JPanel panelSuperior;
@@ -27,26 +27,32 @@ public class Login {
         ventanaLogin.setVisible(true);
     }
 
+    @Override
     public JFrame getVentanaLogin() {
         return ventanaLogin;
     }
 
+    @Override
     public JButton getBotonSalir() {
         return botonSalir;
     }
 
+    @Override
     public JLabel getLabelError() {
         return labelError;
     }
 
+    @Override
     public JTextField getTextEmail() {
         return textEmail;
     }
 
+    @Override
     public JPasswordField getTextPassword() {
         return textPassword;
     }
 
+    @Override
     public JButton getBotonLoguear() {
         return botonLoguear;
     }
