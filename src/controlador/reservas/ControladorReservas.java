@@ -29,16 +29,21 @@ public class ControladorReservas {
         try {
             /*vista.getTextoFecha().setText(modelo.obtenerReservarPorUsuario(usuario.getDni()).get(0).
                     getFecha().toString());*/
-            String fecha = Fechas.convertirFormatoFechaEspannol(modelo.obtenerReservarPorUsuario(usuario.getDni()).get(0).
-                    getFecha());
-            vista.getTextoFecha().setText(fecha);
-            vista.getTextoDuracion().setText(String.valueOf(modelo.obtenerReservarPorUsuario(usuario.getDni()).get(0).getDuracion()));
-            vista.getTextoHoraEntrada().setText(String.valueOf(modelo.obtenerReservarPorUsuario(usuario.getDni()).get(0).getHoraEntrada()));
-            vista.getTextoTipoReserva().setText(String.valueOf(modelo.obtenerReservarPorUsuario(usuario.getDni()).get(0).getTipoReserva()));
+            inicializarListaLanzaExcepcion();
         } catch (SQLException e) {
             e.printStackTrace();
         }
     }
+
+    private void inicializarListaLanzaExcepcion() throws SQLException {
+        String fecha = Fechas.convertirFormatoFechaEspannol(modelo.obtenerReservarPorUsuario(usuario.getDni()).get(0).
+                getFecha());
+        vista.getTextoFecha().setText(fecha);
+        vista.getTextoDuracion().setText(String.valueOf(modelo.obtenerReservarPorUsuario(usuario.getDni()).get(0).getDuracion()));
+        vista.getTextoHoraEntrada().setText(String.valueOf(modelo.obtenerReservarPorUsuario(usuario.getDni()).get(0).getHoraEntrada()));
+        vista.getTextoTipoReserva().setText(String.valueOf(modelo.obtenerReservarPorUsuario(usuario.getDni()).get(0).getTipoReserva()));
+    }
+
     public void inicializarControlador() {
         vista.getBorrar().addActionListener(actionEvent -> borrarReserva());
         vista.getBotonCerrarSesion().addActionListener(actionEvent -> cerrarSesion());
