@@ -4,10 +4,8 @@ import helpers.Fechas;
 import modelo.dao.reserva.ReservaDAO;
 import modelo.dao.reserva.ReservaDAOImpl;
 import modelo.dao.usuario.Usuario;
-import modelo.dao.usuario.UsuarioDAO;
-import vista.logueo.Login;
 import vista.reservas.Reserva;
-import helpers.Fechas.*;
+
 import javax.swing.*;
 import java.sql.SQLException;
 
@@ -29,13 +27,13 @@ public class ControladorReservas {
         try {
             /*vista.getTextoFecha().setText(modelo.obtenerReservarPorUsuario(usuario.getDni()).get(0).
                     getFecha().toString());*/
-            inicializarListaLanzaExcepcion();
+            inicializarVistaLanzaExcepcion();
         } catch (SQLException e) {
             e.printStackTrace();
         }
     }
 
-    private void inicializarListaLanzaExcepcion() throws SQLException {
+    private void inicializarVistaLanzaExcepcion() throws SQLException {
         String fecha = Fechas.convertirFormatoFechaEspannol(modelo.obtenerReservarPorUsuario(usuario.getDni()).get(0).
                 getFecha());
         vista.getTextoFecha().setText(fecha);
