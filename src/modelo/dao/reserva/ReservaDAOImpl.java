@@ -127,11 +127,15 @@ public class ReservaDAOImpl implements  ReservaDAO{
         ResultSet resultado = sentencia.executeQuery();
         while (resultado.next())
             id = resultado.getInt(1);
+        comprobarYCerrarSentenciaYResultado(sentencia, resultado);
+        return id != -1;
+    }
+
+    private void comprobarYCerrarSentenciaYResultado(PreparedStatement sentencia, ResultSet resultado) throws SQLException {
         if (resultado != null)
             resultado.close();
         if ( sentencia != null )
             sentencia.close();
-        return id != -1;
     }
 
     @Override
