@@ -1,0 +1,1 @@
+Este proyecto trata sobre la interfaz gráfica y el funcionamiento del proyecto del museo.
